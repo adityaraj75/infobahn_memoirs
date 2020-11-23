@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "infobahn_memoir",
+    "version": "0.1",
+
+    "description": "Save articles/specific texts that you find on the internet to your browser in the form of a diary entry",
+
+    "icons" : {
+        "48": "media/icons/icon_48.png"
+    },
+
+    "background": {
+        "scripts": ["scripts/backgroundScripts/background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/contextScripts/context.js"]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "clipboardRead",
+        "storage",
+        "menus",
+        "unlimitedStorage",
+        "activeTab",
+        "<all_urls>",
+        "contextMenus"
+    ]
+}
